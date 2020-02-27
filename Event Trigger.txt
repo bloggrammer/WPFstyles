@@ -1,0 +1,419 @@
+<Button Margin="5" Style="{StaticResource ButtonStyle}"
+                             Content="Fluid Validity Check">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FVC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Visible}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Vis}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CVD}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference SEP}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference DLE}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEOIL}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEGAS}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+
+                    <Button  Margin="5"  Style="{StaticResource ButtonStyle}"
+                          Content="Fluid Composition">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FVC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Vis}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CVD}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference SEP}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference DLE}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEOIL}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEGAS}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Visible}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    
+                    <Button x:Name="CCE" Click="CCE_Click" Margin="5" Style="{StaticResource ButtonStyle}"
+                           Content="Constant Composition Expansion">
+                        <Button.ContextMenu >
+                            <ContextMenu   >
+                                <MenuItem Cursor="Hand" Header="Oil" >
+                                    <MenuItem.Triggers>
+                                        <EventTrigger RoutedEvent="MenuItem.Click">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FVC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Vis}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CVD}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference SEP}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference DLE}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEOIL}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Visible}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEGAS}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </MenuItem.Triggers>
+                                </MenuItem>
+                                <MenuItem Cursor="Hand" Header="Gas" >
+                                    <MenuItem.Triggers>
+                                        <EventTrigger RoutedEvent="MenuItem.Click">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FVC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Vis}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CVD}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference SEP}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference DLE}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEOIL}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEGAS}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Visible}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </MenuItem.Triggers>
+                                </MenuItem>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+
+                    <Button  Margin="5" Style="{StaticResource ButtonStyle}"
+                           Content="Differential Liberation Expansion">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FVC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Vis}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CVD}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference SEP}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference DLE}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Visible}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEOIL}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEGAS}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+
+                    <Button  Margin="5" Style="{StaticResource ButtonStyle}"
+                            Content="Constant Volume Depletion">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Vis}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FVC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CVD}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Visible}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference SEP}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference DLE}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEOIL}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEGAS}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+
+                    <Button  Margin="5"  Style="{StaticResource ButtonStyle}"
+                          Content="Separator Test">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FVC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Vis}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CVD}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference SEP}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Visible}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference DLE}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEOIL}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEGAS}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    
+                    <Button  Margin="5" Style="{StaticResource ButtonStyle}"
+                            Content="Viscosity Test">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FVC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Vis}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Visible}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CVD}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference SEP}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference DLE}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEOIL}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference CCEGAS}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference FC}"
+                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
