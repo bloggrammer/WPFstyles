@@ -131,7 +131,7 @@
     <SolidColorBrush x:Key="LightColorBrush" Color="#DDD" />
 
     <!-- Final Style -->
-    <Style x:Key="PVTRmsButton" TargetType="Button">
+    <Style x:Key="ButtonStyle" TargetType="Button">
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
