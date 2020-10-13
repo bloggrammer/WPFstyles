@@ -1,0 +1,18 @@
+ <Style x:Key="PopupContentStyle" TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <StackPanel Width="Auto" Height="Auto" Background="Transparent">
+                        <Path  Fill="LightBlue" Stroke="LightBlue" StrokeThickness="1" 
+                                  VerticalAlignment="Top" HorizontalAlignment="Center" Data="M 0 9 9 -0 18 9" />
+
+                        <Border BorderThickness="1" BorderBrush="LightBlue"  Padding="5" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <StackPanel  >
+                                <ContentPresenter />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
