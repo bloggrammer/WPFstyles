@@ -1,0 +1,85 @@
+  <Style x:Key="PopupContentStyle" TargetType="ContentControl">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ContentControl">
+                            <StackPanel Width="Auto" Height="Auto" Background="Transparent">
+                                <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="5" Padding="5" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <StackPanel Margin="5">
+                                        <ContentPresenter />
+                                    </StackPanel>
+                                </Border>
+                                <Path x:Name="arrow" Data="M 0 0 L 6 6 L 12 0 Z" Fill="White" Stroke="Gray" StrokeThickness="2" Margin="5,0,0,0"
+                                  VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" />
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+             <!--Settings popup-->
+        <Popup x:Name="jj" PlacementTarget="{Binding ElementName=AniText}" 
+               StaysOpen="False" Placement="Top" 
+               AllowsTransparency="True"
+               PopupAnimation="Slide"
+               IsOpen="True">
+            <ContentControl Style="{StaticResource PopupContentStyle}">
+                <StackPanel >
+                    <GroupBox Header="Condition" Padding="10">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Content: " FontSize="11"
+                                      FontWeight="Bold" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" FontSize="11"
+                                      FontWeight="Bold" Foreground="Red"
+                                       FontStyle="Italic"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Content"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Margin="3" />
+
+                            <TextBlock Grid.Row="3" Grid.Column="0" Margin="3" Text="Content" />
+                            <TextBox Grid.Row="3" Grid.Column="1"  Margin="3" />
+
+                            <TextBlock Grid.Row="4" Grid.Column="0" Margin="3" Text="Content" />
+                            <TextBox Grid.Row="4" Grid.Column="1" Margin="3" />
+
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </ContentControl>
+        </Popup>
+
+        <!--Settings button-->
+
+        <TextBlock Name="AniText" Grid.Row="2"
+                   HorizontalAlignment="Left" 
+                 VerticalAlignment="Center" Margin="10"
+                   FontWeight="Bold" Foreground="Blue">
+
+            <TextBlock.Triggers>
+
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+            Storyboard.TargetName="AniText" 
+            Storyboard.TargetProperty="FontSize"
+            From="11"  To="18" Duration="0:0:5" 
+            AutoReverse="True" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+                <Hyperlink>Open popup</Hyperlink>
+        </TextBlock>
