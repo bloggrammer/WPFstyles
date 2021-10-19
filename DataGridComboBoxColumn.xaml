@@ -1,0 +1,29 @@
+
+
+<Windows.Resources>
+ <CollectionViewSource x:Key="myKey" Source="{Binding MyComboxCollections}" />
+
+ </Windows.Resources>
+
+<DataGrid ItemsSource="{Binding MyCollections}" SelectedItem="{Binding SelectedItem}"
+ >
+                            
+   <DataGrid.Columns>
+                                
+        <DataGridComboBoxColumn Header="Item 1" ItemsSource="{Binding Source={StaticResource myKey}}" SelectedItemBinding="{Binding ModelProperty}">
+                            <DataGridTextColumn Header="Item 2" Binding="{Binding  ModelProperty}" Width="3*"/>
+                               
+ </DataGrid.Columns>   
+<DataGridComboBoxColumn  Width="3*"
+                        ItemsSource="{Binding Source={StaticResource Components}}" SelectedItemBinding="{Binding Component, Mode=TwoWay}">
+                                    <DataGridComboBoxColumn.Header>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="Component"/>
+                                            <TextBlock Text="(Double-click to select component)" FontWeight="Bold" FontSize="10" FontStyle="Italic" />
+                                        </StackPanel>
+                                    </DataGridComboBoxColumn.Header>                               
+</DataGrid>
+
+
+
+
