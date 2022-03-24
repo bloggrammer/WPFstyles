@@ -1,0 +1,153 @@
+ 
+ <!--Source : https://stackoverflow.com/questions/27186884/progress-bar-in-wpf/27226735#27226735-->
+
+<Window.Resources>
+        <Style TargetType="{x:Type ProgressBar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid x:Name="TemplateRoot">
+                            <Border Margin="5,0,5,0"  BorderThickness="0,1.2,0,1.2"  BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True"    Background="{TemplateBinding Background}"/>
+                            <Rectangle  x:Name="PART_Track"/>
+                            <Grid x:Name="PART_Indicator" ClipToBounds="True" HorizontalAlignment="Left">
+                                <Grid x:Name="Indicator">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Margin="0,0,-3,0" Grid.Column="1" Fill="{TemplateBinding Foreground}" />
+                                    <Ellipse Height="{Binding Path=Width,RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="2" StrokeThickness="{TemplateBinding BorderThickness}" Stroke="{TemplateBinding BorderBrush}" Width="8" Fill="{TemplateBinding Foreground}"/>
+                                    <Ellipse Height="{Binding Path=Width,RelativeSource={RelativeSource TemplatedParent}}"  StrokeThickness="{TemplateBinding BorderThickness}" Stroke="{TemplateBinding BorderBrush}" Width="10" Fill="{TemplateBinding Foreground}"/>
+                                    <Rectangle Margin="5,0,0,0" Fill="{TemplateBinding Foreground}"></Rectangle>
+                                    <Border  Grid.Column="1"  BorderBrush="{TemplateBinding BorderBrush}" Margin="-5,0,-2,0" BorderThickness="0,1,0,1"/>
+                                </Grid>
+                                <Grid  x:Name="Animation">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Ellipse Height="{Binding Path=Width,RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="2" StrokeThickness="{TemplateBinding BorderThickness}" Stroke="{TemplateBinding BorderBrush}" Width="8" Fill="{TemplateBinding Foreground}"/>
+                                    <Rectangle   Grid.Column="1"  RenderTransformOrigin="0.5,0.5">
+                                        <Rectangle.RenderTransform>
+                                            <ScaleTransform/>
+                                        </Rectangle.RenderTransform>
+                                        <Rectangle.Fill>
+                                            <VisualBrush Stretch="None">
+                                                <VisualBrush.Visual>
+                                                    <Grid Background="{TemplateBinding Foreground}">
+                                                        <TextBlock  Grid.ColumnSpan="2"  Text="{Binding Path=Value,RelativeSource={RelativeSource TemplatedParent}}" RenderTransformOrigin=".5,.5" Foreground="Black">
+                                                            <TextBlock.RenderTransform>
+                                                                <RotateTransform Angle="90"></RotateTransform>
+                                                            </TextBlock.RenderTransform>
+                                                        </TextBlock>
+                                                    </Grid>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <Ellipse Height="{Binding Path=Width,RelativeSource={RelativeSource TemplatedParent}}"  StrokeThickness="{TemplateBinding BorderThickness}" Stroke="{TemplateBinding BorderBrush}" Width="10" Fill="{TemplateBinding Foreground}"/>
+                                    <Rectangle   Margin="5,0,0,0" Fill="{TemplateBinding Foreground}"></Rectangle>
+                                    <Border  Grid.Column="1"  BorderBrush="{TemplateBinding BorderBrush}" Margin="-5,0,-2,0" BorderThickness="0,1,0,1"/>
+                                </Grid>
+                            </Grid>
+                            <Ellipse HorizontalAlignment="Right" Height="{Binding Path=Width,RelativeSource={RelativeSource TemplatedParent}}"  StrokeThickness="{TemplateBinding BorderThickness}" Stroke="{TemplateBinding BorderBrush}" Width="8" Fill="{TemplateBinding Background}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Orientation" Value="Vertical">
+                                <Setter Property="LayoutTransform" TargetName="TemplateRoot">
+                                    <Setter.Value>
+                                        <RotateTransform Angle="-90"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsIndeterminate" Value="True">
+                                <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+  
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ProgressBar  BorderThickness="1" BorderBrush="#95928A" SnapsToDevicePixels="True"  Background="#E2E2E2" Foreground="#D4BC39" Margin="30" Width="30" IsIndeterminate="False" Orientation="Vertical" Minimum="0" Maximum="100" Value="30" Height="150" />
+            <ProgressBar  BorderThickness="1" BorderBrush="#95928A" SnapsToDevicePixels="True"  Background="#E2E2E2" Foreground="#D4BC39" Margin="30" Width="30" IsIndeterminate="False" Orientation="Vertical" Minimum="0" Maximum="100" Value="47.5" Height="150" />
+            <ProgressBar  BorderThickness="1" BorderBrush="#95928A" SnapsToDevicePixels="True"  Background="#E2E2E2" Foreground="#D4BC39" Margin="30" Width="30" IsIndeterminate="False" Orientation="Vertical" Minimum="0" Maximum="100" Value="75" Height="150" />
+            <ProgressBar  Value="{Binding Value, ElementName=slider}"  BorderThickness="1" BorderBrush="#95928A" SnapsToDevicePixels="True"  Background="#E2E2E2" Foreground="#D4BC39" Margin="30" Width="30" IsIndeterminate="False" Orientation="Vertical" Minimum="0" Maximum="100" Height="150" />
+        </StackPanel>
+        <Slider x:Name="slider" Maximum="100" Value="60" Width="200"  />
+
+    </Grid>
+ 
+
+
+
+<Grid>
+ <!--Source : https://social.msdn.microsoft.com/Forums/vstudio/en-US/a0ae61b9-8d7e-40a4-9c0c-ebe1d5663e8a/custom-vertical-progress-bar?forum=wpf-->
+        <Grid.Resources>
+            <Style TargetType="{x:Type ProgressBar}" x:Key="{x:Type ProgressBar}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ProgressBar}">
+
+                            <!--Need a control to host multiple children-->
+                            <Grid>
+
+                                <!--This is the background gradient-->
+                                <Rectangle 
+                                    Name="PART_Track" Stroke="#888888" StrokeThickness="1">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#FFFFFF00"/>
+                                            <GradientStop Offset="0.5" Color="#FFFFc000"/>
+                                            <GradientStop Offset="0.85" Color="#FFFF8000"/>
+                                            <GradientStop Offset="1" Color="#FFFF0000"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+
+                                <!--This is the part that changes, masking out the underlying gradient-->
+                                <!--At low values the PART_Indicator is relatively small so the Mask expands to cover the background gradient.-->
+                                <!--At high values the PART_Indicator is relatively large so the Mask is shrunk and more background is exposed.-->
+                                <DockPanel
+                                    x:Name="DockMask">
+                                    <Rectangle 
+                                        Name="PART_Indicator" />
+                                    <Rectangle 
+                                        Name="Mask" 
+                                        Fill="#FFC0C0"
+                                        Margin="1"/>
+                                </DockPanel>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ProgressBar 
+            Orientation="Horizontal"
+            Width="200" Height="50"
+          
+            Value="{Binding Value, ElementName=slider}" 
+            RenderTransformOrigin="0.5,0.5">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="270"/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Slider x:Name="slider" Grid.Row="1" Maximum="100" Value="60" Width="200"  />
+    </Grid>
